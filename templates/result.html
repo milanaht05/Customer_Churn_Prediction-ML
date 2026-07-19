@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Prediction Result{% endblock %}
+
+{% block content %}
+<div class="result-banner {{ 'churn' if prediction == 'Churn' else 'no-churn' }}">
+    <div>Prediction</div>
+    <div class="big">{{ prediction }}</div>
+    <span class="badge {{ 'high' if risk == 'High Risk' else ('medium' if risk == 'Medium Risk' else 'low') }}">
+        {{ risk }}
+    </span>
+</div>
+
+<div class="card">
+    <h2>Churn Probability</h2>
+    <p class="subtitle">Estimated likelihood that this customer will churn.</p>
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="value">{{ probability }}%</div>
+            <div class="label">Churn Probability</div>
+        </div>
+        <div class="stat-card">
+            <div class="value">{{ risk }}</div>
+            <div class="label">Risk Level</div>
+        </div>
+    </div>
+
+    <a href="{{ url_for('home') }}" class="btn btn-secondary" style="margin-top:22px;">Make Another Prediction</a>
+    <a href="{{ url_for('dashboard') }}" class="btn" style="margin-top:22px;">View Dashboard</a>
+</div>
+{% endblock %}

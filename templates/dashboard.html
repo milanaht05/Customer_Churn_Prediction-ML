@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Prediction Dashboard</h1>
+    <p class="subtitle">Summary of all predictions made so far.</p>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <div class="value">{{ total_predictions }}</div>
+            <div class="label">Total Predictions</div>
+        </div>
+        <div class="stat-card">
+            <div class="value">{{ churn_count }}</div>
+            <div class="label">Predicted Churn</div>
+        </div>
+        <div class="stat-card">
+            <div class="value">{{ no_churn_count }}</div>
+            <div class="label">Predicted No Churn</div>
+        </div>
+        <div class="stat-card">
+            <div class="value">{{ avg_probability }}%</div>
+            <div class="label">Avg. Churn Probability</div>
+        </div>
+    </div>
+
+    <a href="{{ url_for('analytics') }}" class="btn" style="margin-top:24px;">View Detailed Analytics</a>
+</div>
+{% endblock %}

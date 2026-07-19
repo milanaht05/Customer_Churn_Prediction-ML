@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Analytics{% endblock %}
+
+{% block content %}
+<div class="card">
+    <h1>Prediction History</h1>
+    <p class="subtitle">The most recent 20 predictions made through this app.</p>
+    <div style="overflow-x:auto;">
+        {{ tables | safe }}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+.env
+
+# Model Files
+# model/*.pkl
+
+# Reports
+reports/*.pdf
+reports/*.csv
+
+# Prediction History
+saved_predictions/*.csv
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
